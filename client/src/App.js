@@ -8,6 +8,7 @@ import Posts from "./components/Header/Posts/Posts";
 import { Component } from "react";
 import Footer from "./components/Footer/Footer";
 import Login from "./components/Header/LogIn/LogIn";
+import Demo from "./components/Main/Demo/Demo";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -22,7 +23,6 @@ class App extends Component {
       .catch((err) => console.log(err));
   }
   render() {
-    console.log(this.state.posts);
     return (
       <>
         <Navigation />
@@ -33,6 +33,7 @@ class App extends Component {
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/login" element={<Login />} />
           <Route path="*" element={<h1>Error Page</h1>}></Route>
+          <Route path="/demo" element={<Demo />}></Route>
         </Routes>
         <Footer />
       </>

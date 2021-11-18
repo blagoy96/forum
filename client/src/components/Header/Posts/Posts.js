@@ -1,6 +1,5 @@
 import Post from "../../Main/Post/Post";
 const Posts = ({ posts }) => {
-  console.log(posts);
   return (
     <div>
       {posts.map((x) => (
