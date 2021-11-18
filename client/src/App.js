@@ -7,8 +7,7 @@ import ContactUs from "./components/Header/ContactUs/ContactUs";
 import Posts from "./components/Header/Posts/Posts";
 import { Component } from "react";
 import Footer from "./components/Footer/Footer";
-import Login from "./components/Header/LogIn/LogIn";
-import Demo from "./components/Main/Demo/Demo";
+import Login from "./components/Header/Login/Login";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -33,7 +32,6 @@ class App extends Component {
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/login" element={<Login />} />
           <Route path="*" element={<h1>Error Page</h1>}></Route>
-          <Route path="/demo" element={<Demo />}></Route>
         </Routes>
         <Footer />
       </>
