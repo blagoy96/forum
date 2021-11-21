@@ -1,0 +1,7 @@
+.comment {
+  height: 200px;
+  font-size: 30pt;
+}
+textarea {
+  resize: none;
+}

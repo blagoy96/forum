@@ -1,4 +1,4 @@
-import Post from "../../Main/Post/Post";
+import Post from "../../Main/Post";
 const Posts = ({ posts }) => {
   return (
     <div>

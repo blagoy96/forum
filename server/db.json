@@ -1,10 +1,229 @@
 {
-    "posts": [
-      { "id": 1, "title": "Cars", "author": "Blagoy", "description": "lorem ipsum djsaidmk kdsaodml mdaskdm ldsad k" },
-      { "id": 2, "title": "Computers", "author": "Lubomir", "description": "lorem ipsum djsaidmk kdsaodml mdaskdm ldsad k" },
-      { "id": 3, "title": "Trucks", "author": "Georgi", "description": "lorem ipsum djsaidmk kdsaodml mdaskdm ldsad k" },
-      { "id": 4, "title": "Police", "author": "Kristian", "description": "lorem ipsum djsaidmk kdsaodml mdaskdm ldsad k" },
-      { "id": 5, "title": "Some Title", "author": "Author", "description": "lorem ipsum djsaidmk kdsaodml mdaskdm ldsad k" },
-      { "id": 6, "title": "Some Title", "author": "Author", "description": "lorem ipsum djsaidmk kdsaodml mdaskdm ldsad k" }
-    ]
-  }
+  "posts": [
+    {
+      "id": 1,
+      "title": "Cars",
+      "author": "Blagoy",
+      "description": "lorem ipsum djsaidmk kdsaodml mdaskdm ldsad k"
+    },
+    {
+      "id": 2,
+      "title": "Computers",
+      "author": "Lubomir",
+      "description": "lorem ipsum djsaidmk kdsaodml mdaskdm ldsad k"
+    },
+    {
+      "id": 3,
+      "title": "Trucks",
+      "author": "Georgi",
+      "description": "lorem ipsum djsaidmk kdsaodml mdaskdm ldsad k"
+    },
+    {
+      "id": 4,
+      "title": "Police",
+      "author": "Kristian",
+      "description": "lorem ipsum djsaidmk kdsaodml mdaskdm ldsad k"
+    },
+    {
+      "id": 5,
+      "title": "Some Title",
+      "author": "Author",
+      "description": "lorem ipsum djsaidmk kdsaodml mdaskdm ldsad k"
+    },
+    {
+      "id": 6,
+      "title": "Some Title",
+      "author": "Author",
+      "description": "lorem ipsum djsaidmk kdsaodml mdaskdm ldsad k"
+    },
+    {
+      "auhtor": "blagoy96",
+      "description": "Hello my first post for the forum with fetch",
+      "title": "programming",
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "auhtor": "Lubcho",
+      "description": "I love cars and fast speeds",
+      "title": "cars",
+      "id": 9
+    },
+    {
+      "auhtor": "",
+      "description": "I love cars and fast speeds",
+      "title": "",
+      "id": 10
+    },
+    {
+      "auhtor": "blagoy96",
+      "description": "dsdasds",
+      "title": "",
+      "id": 11
+    },
+    {
+      "auhtor": "blagoy96",
+      "description": "dsdasds",
+      "title": "",
+      "id": 12
+    },
+    {
+      "auhtor": "blagoy96",
+      "description": "sdadsd",
+      "title": "dsd",
+      "id": 13
+    },
+    {
+      "auhtor": "blagoy96",
+      "description": "sdadsd",
+      "title": "dsd",
+      "id": 14
+    },
+    {
+      "auhtor": "blagoy96",
+      "description": "sadsad",
+      "title": "dsad",
+      "id": 15
+    },
+    {
+      "auhtor": "blagoy96",
+      "description": "sadsad",
+      "title": "dsad",
+      "id": 16
+    },
+    {
+      "auhtor": "blagoy96",
+      "description": "sadsad",
+      "title": "dsad",
+      "id": 17
+    },
+    {
+      "auhtor": "blagoy96",
+      "description": "sdsdadas",
+      "title": "dsd",
+      "id": 18
+    },
+    {
+      "auhtor": "blagoy96",
+      "description": "sdsdadas",
+      "title": "dsd",
+      "id": 19
+    },
+    {
+      "auhtor": "blagoy96",
+      "description": "sdsdadas",
+      "title": "dsd",
+      "id": 20
+    },
+    {
+      "auhtor": "blagoy96",
+      "description": "sdsdadas",
+      "title": "dsd",
+      "id": 21
+    },
+    {
+      "auhtor": "blagoy96",
+      "description": "sdsdadas",
+      "title": "dsd",
+      "id": 22
+    },
+    {
+      "auhtor": "dsadas",
+      "description": "dsadas",
+      "title": "dsadsad",
+      "id": 23
+    },
+    {
+      "auhtor": "dsadas",
+      "description": "dsadas",
+      "title": "dsadsad",
+      "id": 24
+    },
+    {
+      "auhtor": "dsadas",
+      "description": "dsadas",
+      "title": "dsadsad",
+      "id": 25
+    },
+    {
+      "auhtor": "dsad",
+      "description": "dsad",
+      "title": "dsad",
+      "id": 26
+    },
+    {
+      "auhtor": "dsad",
+      "description": "dsad",
+      "title": "dsad",
+      "id": 27
+    },
+    {
+      "auhtor": "dsaddsd",
+      "description": "dsadsd",
+      "title": "dsad",
+      "id": 28
+    },
+    {
+      "auhtor": "dsd",
+      "description": "sdsdsd",
+      "title": "sdsdsd",
+      "id": 29
+    },
+    {
+      "auhtor": "sdsd",
+      "description": "sdsdsdsdsd",
+      "title": "sdsdsd",
+      "id": 30
+    },
+    {
+      "auhtor": "sds",
+      "description": "sdsdsd",
+      "title": "dsds",
+      "id": 31
+    },
+    {
+      "auhtor": "sdsd",
+      "description": "dsdsd",
+      "title": "dsdsdsd",
+      "id": 32
+    },
+    {
+      "auhtor": "dsdsd",
+      "description": "dsdsds",
+      "title": "dsdsd",
+      "id": 33
+    },
+    {
+      "auhtor": "",
+      "description": "",
+      "title": "",
+      "id": 34
+    },
+    {
+      "auhtor": "",
+      "description": "",
+      "title": "",
+      "id": 35
+    },
+    {
+      "auhtor": "",
+      "description": "",
+      "title": "",
+      "id": 36
+    },
+    {
+      "auhtor": "",
+      "description": "",
+      "title": "",
+      "id": 37
+    },
+    {
+      "auhtor": "",
+      "description": "",
+      "title": "",
+      "id": 38
+    }
+  ]
+}
