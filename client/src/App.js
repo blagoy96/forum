@@ -15,18 +15,24 @@ class App extends Component {
       posts: [],
     };
   }
+
   componentDidMount() {
     fetch("http://localhost:5000/posts")
       .then((res) => res.json())
-      .then((posts) => this.setState({ posts }))
+      .then((posts) =>
+        this.setState({
+          posts,
+        })
+      )
       .catch((err) => console.log(err));
   }
+
   render() {
     return (
       <>
         <Navigation />
         <Routes>
-          <Route path="/" element={<Posts posts={this.state.posts} />} />
+          <Route exact path="/" element={<Posts posts={this.state.posts} />} />
           <Route path="/about-us" element={<About />} />
           <Route path="/create-post" element={<CreatePost />} />
           <Route path="/contact-us" element={<ContactUs />} />

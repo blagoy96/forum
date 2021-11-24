@@ -1,10 +1,12 @@
 import "./CreatePost.css";
+import { useNavigate } from "react-router-dom";
 const CreatePost = () => {
+  let navigate = useNavigate();
   const onSubmitHandler = (e) => {
     e.preventDefault();
 
     let post = {
-      auhtor: e.target.username.value,
+      author: e.target.username.value,
       description: e.target.description.value,
       title: e.target.title.value,
     };
@@ -15,8 +17,9 @@ const CreatePost = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(post),
-    }).then(() => window.history.pushState(null, null, "/"));
+    }).then(() => navigate("/"));
   };
+
   return (
     <div>
       <h1>Create Post</h1>

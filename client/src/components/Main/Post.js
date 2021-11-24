@@ -4,7 +4,7 @@ const Post = ({ title, author, description }) => {
       <h1>{title}</h1>
       <span>{description}</span>
       <h4>
-        <small>Author:</small>
+        <small>Author: </small>
         {author}
       </h4>
     </div>
