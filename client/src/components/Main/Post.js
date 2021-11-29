@@ -1,4 +1,4 @@
-const Post = ({ title, author, description }) => {
+const Post = ({ author, description, title, id }) => {
   return (
     <div>
       <h1>{title}</h1>
