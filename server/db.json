@@ -41,6 +41,18 @@
       "description": "Hello my first post for the forum with fetch",
       "title": "programming",
       "id": 7
+    },
+    {
+      "author": "blago",
+      "description": "hahahaah\n",
+      "title": "Cars",
+      "id": "hahahaah\n"
+    },
+    {
+      "author": "lubo",
+      "description": "dsadsa",
+      "title": "Cars",
+      "id": "dsadsa"
     }
   ]
 }
