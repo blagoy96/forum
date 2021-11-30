@@ -3,6 +3,7 @@ import Navigation from "./components/Header/Navigation/Navigation";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import About from "./components/Header/About/About";
 import ContactUs from "./components/Header/ContactUs/ContactUs";
+import Demo from "./components/Header/Demo/Demo";
 import Posts from "./components/Header/Posts/Posts";
 import Footer from "./components/Footer/Footer";
 import Login from "./components/Header/Login/Login";
@@ -36,7 +37,7 @@ const App = () => {
   };
   return (
     <>
-      <Navigation />
+      <Navigation posts={posts} />
       <Routes>
         <Route path="/" element={<Posts posts={posts} />} />
         <Route path="/about-us" element={<About />} />
@@ -46,6 +47,7 @@ const App = () => {
         />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/demo" element={<Demo posts={posts} />} />
         <Route path="*" element={<h1>Error Page</h1>}></Route>
       </Routes>
       <Footer />

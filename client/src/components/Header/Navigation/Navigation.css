@@ -22,7 +22,6 @@ li a:hover {
   color: black;
 }
 
-
 li a.active {
   background-color: #04aa6d;
   color: white;
