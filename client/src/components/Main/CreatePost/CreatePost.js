@@ -8,6 +8,7 @@ const CreatePost = (props) => {
       author: e.target.username.value,
       description: e.target.description.value,
       title: e.target.title.value,
+      id: e.target.description.value,
     };
     props.onSubmitHandler(post);
   };

@@ -16,7 +16,6 @@ const App = () => {
       .then((res) => res.json())
       .then((res) => setPosts(res))
       .catch((err) => console.log(err));
-    console.log("useEffect finished");
   }, []);
 
   let post = {};
@@ -30,10 +29,8 @@ const App = () => {
       },
       body: JSON.stringify(post),
     })
-      .then((res) => {
-        const newPosts = [...posts];
-        newPosts.push(res.json());
-        setPosts(newPosts);
+      .then(() => {
+        posts.push(post);
       })
       .then(() => navigate("/"));
   };
@@ -41,7 +38,7 @@ const App = () => {
     <>
       <Navigation />
       <Routes>
-        <Route exact path="/" element={<Posts posts={posts} />} />
+        <Route path="/" element={<Posts posts={posts} />} />
         <Route path="/about-us" element={<About />} />
         <Route
           path="/create-post"

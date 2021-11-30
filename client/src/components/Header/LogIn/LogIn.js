@@ -33,7 +33,6 @@ const Login = () => {
         </select>
 
         <input type="submit" value="Send" />
-        <input type="file" />
       </form>
     </div>
   );
