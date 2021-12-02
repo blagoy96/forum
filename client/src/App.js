@@ -9,6 +9,7 @@ import Footer from "./components/Footer/Footer";
 import Login from "./components/Header/Login/Login";
 import CreatePost from "./components/Main/CreatePost/CreatePost";
 import { useState, useEffect } from "react";
+import "./config/firebase";
 const App = () => {
   const [posts, setPosts] = useState([]);
 

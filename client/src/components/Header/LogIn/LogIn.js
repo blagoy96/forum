@@ -1,20 +1,24 @@
 import "./Login.css";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 const Login = () => {
   const onClickHandler = (e) => {
     e.preventDefault();
-    console.log(e.target.username.value);
-    console.log(e.target.age.value);
-    console.log(e.target.email.value);
-    console.log(e.target.gender.value);
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    const auth = getAuth();
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        console.log(userCredential);
+      })
+      .catch((err) => console.log("User not found"));
   };
+
   return (
     <div>
       <h1>Login Page</h1>
 
       <form onSubmit={onClickHandler}>
-        <label htmlFor="username">Username</label>
-        <input type="text" id="username" name="username" />
-
         <label htmlFor="email">email</label>
         <input
           type="email"
@@ -23,14 +27,8 @@ const Login = () => {
           placeholder="example@mail.com"
         />
 
-        <label htmlFor="age">Age</label>
-        <input type="number" id="age" name="age" />
-
-        <label htmlFor="gender">gender</label>
-        <select name="gender" id="gender">
-          <option value="male" label="male" />
-          <option value="woman" label="woman" />
-        </select>
+        <label htmlFor="password">password</label>
+        <input type="password" id="password" name="password" />
 
         <input type="submit" value="Send" />
       </form>
