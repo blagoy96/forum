@@ -30,5 +30,10 @@ li a.active {
 .login {
   position: absolute;
   right: 50px;
-  width: 150px;
+  width: 200px;
+}
+.logout {
+  position: absolute;
+  right: 50px;
+  width: 100px;
 }

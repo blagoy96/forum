@@ -1,22 +1,23 @@
-import "./Login.css";
-import { getAuth, signInWithEmailAndPassword } from "@firebase/auth";
+import { createUserWithEmailAndPassword, getAuth } from "@firebase/auth";
+import { useNavigate } from "react-router";
 import { auth } from "../../../config/firebase";
-const Login = () => {
+const Register = () => {
+  const navigate = useNavigate();
   const onClickHandler = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    signInWithEmailAndPassword(getAuth(), email, password)
-      .then((userCredential) => {
-        console.log(userCredential);
+    createUserWithEmailAndPassword(getAuth(), email, password)
+      .then((user) => {
+        navigate("/");
       })
-      .catch((err) => console.log("User not found"));
+      .catch((err) => console.log(err));
   };
 
   return (
     <div>
-      <h1>Login Page</h1>
+      <h1>Register</h1>
 
       <form onSubmit={onClickHandler}>
         <label htmlFor="email">email</label>
@@ -30,10 +31,10 @@ const Login = () => {
         <label htmlFor="password">password</label>
         <input type="password" id="password" name="password" />
 
-        <input type="submit" value="Send" />
+        <input type="submit" value="Register" />
       </form>
     </div>
   );
 };
 
-export default Login;
+export default Register;

@@ -7,9 +7,9 @@ import Demo from "./components/Header/Demo/Demo";
 import Posts from "./components/Header/Posts/Posts";
 import Footer from "./components/Footer/Footer";
 import Login from "./components/Header/Login/Login";
+import Register from "./components/Header/Register/Register";
 import CreatePost from "./components/Main/CreatePost/CreatePost";
 import { useState, useEffect } from "react";
-import "./config/firebase";
 const App = () => {
   const [posts, setPosts] = useState([]);
 
@@ -47,7 +47,9 @@ const App = () => {
           element={<CreatePost onSubmitHandler={onSubmitHandler} post={post} />}
         />
         <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/logout" />
         <Route path="/demo" element={<Demo posts={posts} />} />
         <Route path="*" element={<h1>Error Page</h1>}></Route>
       </Routes>

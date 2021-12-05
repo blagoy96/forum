@@ -1,6 +1,9 @@
 import { NavLink } from "react-router-dom";
 import "./Navigation.css";
+import { getAuth, signOut } from "@firebase/auth";
+import { useNavigate } from "react-router";
 const Navigation = () => {
+  let navigate = useNavigate();
   return (
     <nav className="navigation">
       <ul>
@@ -21,6 +24,17 @@ const Navigation = () => {
         </li>
         <li className="login">
           <NavLink to="/login">Login</NavLink>
+        </li>
+        <li className="logout">
+          <NavLink
+            to="/logout"
+            onClick={() => signOut(getAuth()).then(() => navigate("/"))}
+          >
+            Logout
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/register">Register</NavLink>
         </li>
       </ul>
     </nav>
