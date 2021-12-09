@@ -1,6 +1,6 @@
 import "./Login.css";
 import { getAuth, signInWithEmailAndPassword } from "@firebase/auth";
-import { auth } from "../../../config/firebase";
+import "../../../config/firebase";
 const Login = () => {
   const onClickHandler = (e) => {
     e.preventDefault();

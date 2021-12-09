@@ -1,16 +1,22 @@
 import "./CreatePost.css";
+import { db } from "../../../config/firebase";
+import { doc, setDoc } from "firebase/firestore";
 
 const CreatePost = (props) => {
   const onSubmit = (e) => {
     e.preventDefault();
-
     const post = {
       author: e.target.username.value,
       description: e.target.description.value,
       title: e.target.title.value,
-      id: e.target.description.value,
+      id:
+        e.target.description.value +
+        e.target.title.value +
+        e.target.description.value,
     };
     props.onSubmitHandler(post);
+
+    setDoc(doc(db, "posts", "new-posts"), { post });
   };
 
   return (

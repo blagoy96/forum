@@ -1,6 +1,6 @@
 import { createUserWithEmailAndPassword, getAuth } from "@firebase/auth";
 import { useNavigate } from "react-router";
-import { auth } from "../../../config/firebase";
+import "../../../config/firebase";
 const Register = () => {
   const navigate = useNavigate();
   const onClickHandler = (e) => {
