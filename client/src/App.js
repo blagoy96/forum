@@ -10,15 +10,24 @@ import Login from "./components/Header/Login/Login";
 import Register from "./components/Header/Register/Register";
 import CreatePost from "./components/Main/CreatePost/CreatePost";
 import { useState, useEffect } from "react";
+import { db } from "./config/firebase";
+import { collection, getDocs } from "firebase/firestore";
 const App = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/posts")
-      .then((res) => res.json())
-      .then((res) => setPosts(res))
-      .catch((err) => console.log(err));
-  }, []);
+    getDocs(collection(db, "posts")).then((snapShot) =>
+      snapShot.forEach((doc) => posts.push(doc.data()))
+    );
+    console.log(posts);
+  }, [posts]);
+
+  // useEffect(() => {
+  //   fetch("http://localhost:5000/posts")
+  //     .then((res) => res.json())
+  //     .then((res) => console.log(res))
+  //     .catch((err) => console.log(err));
+  // }, []);
 
   let post = {};
 

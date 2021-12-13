@@ -16,7 +16,7 @@ const CreatePost = (props) => {
     };
     props.onSubmitHandler(post);
 
-    setDoc(doc(db, "posts", "new-posts"), { post });
+    setDoc(doc(db, "posts", "haha"), post);
   };
 
   return (
