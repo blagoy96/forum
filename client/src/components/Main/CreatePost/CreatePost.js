@@ -1,8 +1,10 @@
 import "./CreatePost.css";
 import { db } from "../../../config/firebase";
 import { doc, setDoc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 
-const CreatePost = (props) => {
+const CreatePost = () => {
+  let navigate = useNavigate();
   const onSubmit = (e) => {
     e.preventDefault();
     const post = {
@@ -14,9 +16,10 @@ const CreatePost = (props) => {
         e.target.title.value +
         e.target.description.value,
     };
-    props.onSubmitHandler(post);
 
-    setDoc(doc(db, "posts", "haha"), post);
+    setDoc(doc(db, "posts", `${e.target.username.value}`), post).then(
+      navigate("/")
+    );
   };
 
   return (

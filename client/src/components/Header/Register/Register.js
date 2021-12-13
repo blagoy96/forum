@@ -9,7 +9,7 @@ const Register = () => {
     const password = e.target.password.value;
 
     createUserWithEmailAndPassword(getAuth(), email, password)
-      .then((user) => {
+      .then((res) => {
         navigate("/");
       })
       .catch((err) => console.log(err));
