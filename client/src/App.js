@@ -17,14 +17,15 @@ const App = () => {
 
   useEffect(() => {
     getDocs(collection(db, "posts")).then((snapShot) =>
-      snapShot.forEach((doc) => posts.push(doc.data()))
+      snapShot.forEach((doc) => {
+        posts.push(doc.data());
+      })
     );
-    console.log(posts);
-  }, [posts]);
-
+  }, []);
+  console.log(posts);
   return (
     <>
-      <Navigation posts={posts} />
+      <Navigation />
       <Routes>
         <Route path="/" element={<Posts posts={posts} />} />
         <Route path="/about-us" element={<About />} />

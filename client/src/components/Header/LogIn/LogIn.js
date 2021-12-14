@@ -1,7 +1,9 @@
 import "./Login.css";
 import { getAuth, signInWithEmailAndPassword } from "@firebase/auth";
 import "../../../config/firebase";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
+  const navigate = useNavigate();
   const onClickHandler = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -10,6 +12,7 @@ const Login = () => {
     signInWithEmailAndPassword(getAuth(), email, password)
       .then((userCredential) => {
         console.log(userCredential);
+        navigate("/");
       })
       .catch((err) => console.log("User not found"));
   };

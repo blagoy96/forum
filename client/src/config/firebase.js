@@ -17,6 +17,7 @@ export const db = getFirestore();
 export const auth = getAuth().onAuthStateChanged((user) => {
   if (user) {
     console.log("Logged in:");
-    console.log(user);
+  } else {
+    console.log("Logged out:");
   }
 });

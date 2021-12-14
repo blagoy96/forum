@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./Navigation.css";
 import { getAuth, signOut } from "@firebase/auth";
 import { useNavigate } from "react-router";
@@ -14,7 +14,7 @@ const Navigation = () => {
           <NavLink to="/about-us">About us</NavLink>
         </li>
         <li>
-          <NavLink to="/posts">Posts</NavLink>
+          <NavLink to="/create-post">New post</NavLink>
         </li>
         <li>
           <NavLink to="/contact-us">Contact us</NavLink>
@@ -32,6 +32,9 @@ const Navigation = () => {
           >
             Logout
           </NavLink>
+        </li>
+        <li>
+          <Link to="/">Welcome {getAuth().currentUser?.email}</Link>
         </li>
         <li>
           <NavLink to="/register">Register</NavLink>
