@@ -12,7 +12,7 @@ import CreatePost from "./components/Main/CreatePost/CreatePost";
 import React, { useState, useEffect } from "react";
 import { db } from "./config/firebase";
 import { collection, getDocs } from "firebase/firestore";
-export const PostsContext = React.createContext([]);
+import context from "..//src/components/Context/Context";
 const App = () => {
   const [posts, setPosts] = useState([]);
 
@@ -30,17 +30,24 @@ const App = () => {
       <Navigation />
 
       <Routes>
-        {/* <PostsContext.Provider value={posts}> */}
         <Route path="/" element={<Posts posts={posts} />} />
         <Route path="/about-us" element={<About />} />
-        <Route path="/create-post" element={<CreatePost />} />
+
+        <Route
+          path="/create-post"
+          element={
+            <context.Provider value={{ posts, setPosts }}>
+              <CreatePost />
+            </context.Provider>
+          }
+        />
+
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/logout" />
         <Route path="/demo" element={<Demo posts={posts} />} />
         <Route path="*" element={<h1>Error Page</h1>}></Route>
-        {/* </PostsContext.Provider> */}
       </Routes>
 
       <Footer />
