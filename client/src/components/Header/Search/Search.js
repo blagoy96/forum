@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Posts from "../Posts/Posts";
-const Demo = (props) => {
+const Search = (props) => {
   const [state, setState] = useState([]);
   const [count, setCount] = useState(0);
   const searchHandler = (e) => {
@@ -36,4 +36,4 @@ const Demo = (props) => {
   );
 };
 
-export default Demo;
+export default Search;

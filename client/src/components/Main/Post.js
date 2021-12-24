@@ -1,6 +1,7 @@
+import "./Post.css";
 const Post = ({ author, description, title }) => {
   return (
-    <div>
+    <div className="post">
       <h1>{title}</h1>
       <span>{description}</span>
       <h4>

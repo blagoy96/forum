@@ -3,7 +3,7 @@ import Navigation from "./components/Header/Navigation/Navigation";
 import { Routes, Route } from "react-router-dom";
 import About from "./components/Header/About/About";
 import ContactUs from "./components/Header/ContactUs/ContactUs";
-import Demo from "./components/Header/Demo/Demo";
+import Search from "./components/Header/Search/Search";
 import Posts from "./components/Header/Posts/Posts";
 import Footer from "./components/Footer/Footer";
 import Login from "./components/Header/Login/Login";
@@ -46,7 +46,7 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/logout" />
-        <Route path="/demo" element={<Demo posts={posts} />} />
+        <Route path="/search" element={<Search posts={posts} />} />
         <Route path="*" element={<h1>Error Page</h1>}></Route>
       </Routes>
 
