@@ -24,7 +24,6 @@ const App = () => {
     );
   }, []);
 
-  console.log(posts.length);
   return (
     <>
       <Navigation />

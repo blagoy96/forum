@@ -1,28 +1,22 @@
 import { useState } from "react";
 import Posts from "../Posts/Posts";
+import { getDocs, collection } from "firebase/firestore";
+import { db } from "../../../config/firebase";
 const Search = (props) => {
   const [state, setState] = useState([]);
-  const [count, setCount] = useState(0);
   const searchHandler = (e) => {
+    let title = e.target.input.value.toLowerCase();
     e.preventDefault();
+
     setState(() => []);
-    props.posts.filter((value) => {
-      if (value.title.toLowerCase() === e.target.input.value.toLowerCase()) {
-        setCount((oldState) => (oldState += 1));
-        setState((res) => [...res, value]);
-      }
+    getDocs(collection(db, "posts")).then((snapShot) => {
+      snapShot.docs.filter((value) => {
+        if (value.data().title.toLowerCase() === title) {
+          setState((res) => [...res, value.data()]);
+        }
+      });
     });
-
-    console.log(count);
     e.target.input.value = null;
-
-    // props.posts.forEach((element) => {
-    //   if (element.title === e.target.input.value) {
-    //     setState((result) => [...result, element]);
-    //   }
-    // });
-    // e.target.input.value = null;
-    // console.log(state);
   };
 
   return (
