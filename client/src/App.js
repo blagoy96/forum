@@ -13,21 +13,9 @@ import React, { useState, useEffect } from "react";
 import { db } from "./config/firebase";
 import { collection, getDocs } from "firebase/firestore";
 import context from "..//src/components/Context/Context";
-import Pagination from "react-pagination-js";
 
 const App = () => {
   const [posts, setPosts] = useState([]);
-  const [pageNumber, setPageNumber] = useState(1);
-  // const [postsPerPage] = useState(3);
-
-  const postsPerPage = 3;
-  const pagesVisited = pageNumber * postsPerPage;
-  const displayPosts = posts.slice(pagesVisited, pagesVisited + postsPerPage);
-
-  const pageCount = Math.ceil(posts.length / postsPerPage);
-  const changePage = ({ selected }) => {
-    setPageNumber(selected);
-  };
 
   useEffect(() => {
     getDocs(collection(db, "posts")).then((snapShot) =>
@@ -37,18 +25,12 @@ const App = () => {
     );
   }, []);
 
-  // const indexOfLastPost = currentPage * postsPerPage;
-  // const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  // const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
-
-  // const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
   return (
     <>
       <Navigation />
 
       <Routes>
-        <Route path="/" element={<Posts posts={displayPosts} />} />
+        <Route path="/" element={<Posts posts={posts} />} />
         <Route path="/about-us" element={<About />} />
 
         <Route
@@ -67,17 +49,6 @@ const App = () => {
         <Route path="/search" element={<Search posts={posts} />} />
         <Route path="*" element={<h1>Error Page</h1>}></Route>
       </Routes>
-      {/* <Pagination
-        postsPerPage={postsPerPage}
-        totalPosts={posts.length}
-        paginate={paginate}
-      /> */}
-      <Pagination
-        previousLabel={"Previous"}
-        nextLabel={"Next"}
-        pageCount={pageCount}
-        onPageChange={changePage}
-      />
       <Footer />
     </>
   );

@@ -1,0 +1,14 @@
+.paginationBttns {
+  visibility: visible;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  background-color: black;
+}
+.paginationBttns a {
+  border: 1px solid black;
+}
+.paginationActive a {
+  color: white;
+  background-color: #04aa6d;
+}
