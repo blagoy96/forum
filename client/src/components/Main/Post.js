@@ -1,7 +1,7 @@
 import "./Post.css";
-const Post = ({ author, description, title }) => {
+const Post = ({ id, author, description, title }) => {
   return (
-    <div className="post">
+    <div key={id} className="post">
       <h1>{title}</h1>
       <span>{description}</span>
       <h4>
