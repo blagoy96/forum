@@ -1,6 +1,6 @@
 import "./CreatePost.css";
 import { db } from "../../../config/firebase";
-import { doc, setDoc } from "firebase/firestore";
+import { doc, setDoc, Timestamp } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import context from "..//..//..//components/Context/Context";
@@ -14,10 +14,7 @@ const CreatePost = () => {
       author: e.target.username.value,
       description: e.target.description.value,
       title: e.target.title.value,
-      id:
-        e.target.description.value +
-        e.target.title.value +
-        e.target.description.value,
+      id: Timestamp.now().nanoseconds + Timestamp.now().seconds,
     };
     setPosts((result) => [...result, post]);
     setDoc(doc(db, "posts", `${e.target.username.value}`), post).then(

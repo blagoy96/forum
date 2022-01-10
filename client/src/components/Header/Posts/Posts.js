@@ -7,7 +7,6 @@ const Posts = ({ posts }) => {
   const postsPerPage = 1;
   const pagesVisited = pageNumber * postsPerPage;
   const displayPosts = posts.slice(pagesVisited, pagesVisited + postsPerPage);
-  console.log(pagesVisited);
 
   const pageCount = Math.ceil(posts.length / postsPerPage);
   const changePage = ({ selected }) => {
