@@ -24,6 +24,7 @@ const App = () => {
       })
     );
   }, []);
+  console.log(posts.comments);
 
   return (
     <>
