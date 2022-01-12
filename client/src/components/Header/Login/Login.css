@@ -4,3 +4,11 @@ input {
 select {
   display: block;
 }
+.register {
+  color: white;
+  background-color: rgb(19, 180, 19);
+}
+.log {
+  color: white;
+  background-color: dodgerblue;
+}

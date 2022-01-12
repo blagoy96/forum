@@ -2,6 +2,7 @@ import "./Login.css";
 import { getAuth, signInWithEmailAndPassword } from "@firebase/auth";
 import "../../../config/firebase";
 import { useNavigate } from "react-router-dom";
+import Register from "../Register/Register";
 const Login = () => {
   const navigate = useNavigate();
   const onClickHandler = (e) => {
@@ -18,24 +19,36 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <h1>Login Page</h1>
+    <>
+      <div>
+        <h1>Login Page</h1>
 
-      <form onSubmit={onClickHandler}>
-        <label htmlFor="email">email</label>
+        <form onSubmit={onClickHandler}>
+          <label htmlFor="email">email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="example@mail.com"
+          />
+
+          <label htmlFor="password">password</label>
+          <input type="password" id="password" name="password" />
+
+          <input className="log" type="submit" value="Log in" />
+        </form>
+      </div>
+      <div>
         <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="example@mail.com"
-        />
-
-        <label htmlFor="password">password</label>
-        <input type="password" id="password" name="password" />
-
-        <input type="submit" value="Send" />
-      </form>
-    </div>
+          className="register"
+          type="submit"
+          value="Create new account"
+          onClick={() => {
+            navigate("/register");
+          }}
+        ></input>
+      </div>
+    </>
   );
 };
 

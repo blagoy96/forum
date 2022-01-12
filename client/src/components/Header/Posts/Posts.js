@@ -4,7 +4,7 @@ import ReactPaginate from "react-paginate";
 import "..//Posts//Posts.css";
 const Posts = ({ posts }) => {
   const [pageNumber, setPageNumber] = useState(0);
-  const postsPerPage = 1;
+  const postsPerPage = 10;
   const pagesVisited = pageNumber * postsPerPage;
   const displayPosts = posts.slice(pagesVisited, pagesVisited + postsPerPage);
 
@@ -23,7 +23,7 @@ const Posts = ({ posts }) => {
           title={x.title}
         />
       ))}
-      {posts.length > 2 ? (
+      {posts.length > 1 ? (
         <ReactPaginate
           previousLabel={"Previous"}
           nextLabel={"Next"}

@@ -34,10 +34,12 @@ const Navigation = () => {
           </NavLink>
         </li>
         <li>
-          <Link to="/">Welcome {getAuth().currentUser?.email}</Link>
-        </li>
-        <li>
-          <NavLink to="/register">Register</NavLink>
+          <Link to="/">
+            Welcome{" "}
+            {getAuth().currentUser?.email
+              ? getAuth().currentUser?.email
+              : "Guest"}
+          </Link>
         </li>
       </ul>
     </nav>
