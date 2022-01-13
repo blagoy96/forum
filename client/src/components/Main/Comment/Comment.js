@@ -1,8 +1,11 @@
 import "..//Comment/Comment.css";
-
 const Comment = () => {
+  const PostHandler = (e) => {
+    e.preventDefault();
+    e.target.comment.value = null;
+  };
   return (
-    <div>
+    <div onSubmit={PostHandler}>
       <form>
         <textarea
           type="text"

@@ -15,6 +15,7 @@ const CreatePost = () => {
       description: e.target.description.value,
       title: e.target.title.value,
       id: Timestamp.now().nanoseconds + Timestamp.now().seconds,
+      comments: { author: "blago", text: "i also love cars" },
     };
     setPosts((result) => [...result, post]);
     setDoc(doc(db, "posts", `${e.target.username.value}`), post).then(

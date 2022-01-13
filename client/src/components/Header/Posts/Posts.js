@@ -21,6 +21,7 @@ const Posts = ({ posts }) => {
           author={x.author}
           description={x.description}
           title={x.title}
+          comments={x.comments}
         />
       ))}
       {posts.length > 1 ? (
