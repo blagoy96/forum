@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Posts from "../Posts/Posts";
-import { getDocs, collection } from "firebase/firestore";
+import { getDocs, collection, where, query } from "firebase/firestore";
 import { db } from "../../../config/firebase";
 const Search = (props) => {
   const [state, setState] = useState([]);
@@ -9,13 +9,16 @@ const Search = (props) => {
     e.preventDefault();
 
     setState(() => []);
-    getDocs(collection(db, "posts")).then((snapShot) => {
-      snapShot.docs.filter((value) => {
-        if (value.data().title.toLowerCase() === title) {
-          setState((res) => [...res, value.data()]);
-        }
-      });
-    });
+    const postsRef = collection(db, "posts");
+    const q = query(postsRef, where("title", "==", title));
+    console.log(q);
+    // getDocs(collection(db, "posts")).then((snapShot) => {
+    //   snapShot.docs.filter((value) => {
+    //     if (value.data().title.toLowerCase() === title) {
+    //       setState((res) => [...res, value.data()]);
+    //     }
+    //   });
+    // });
     e.target.input.value = null;
   };
 
